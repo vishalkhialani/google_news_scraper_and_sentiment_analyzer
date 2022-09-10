@@ -10,7 +10,7 @@ import numpy as np
 URL = "https://www.google.com/search?q=bitcoin+cryptocurrency&hl=en&gl=us&as_drrb=b&tbas=0&tbs=cdr:1,cd_min:{min_date},cd_max:{max_date},sbd:1&tbm=nws&sxsrf=ACYBGNRfmviSo9arK1e_P_YIl5wsskZBPw:1574225634362&source=lnt&sa=X&ved=0ahUKEwj4wu29__flAhWV9Z4KHaKJAGcQpwUIIA&biw=1685&bih=863&dpr=1.1"
 
 headers = {
-    'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.80 Safari/537.36',
+    'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/105.0.0.0 Safari/537.36',
     'Content-Type': 'text/html',
 }
 
@@ -135,9 +135,9 @@ def clean_news_report(input_file_name, cleaned_output_file_name, save_index=Fals
 
 
 if __name__ == "__main__":
-    start_date = '01/01/2018'
+    start_date = '11/16/2019'
     # end_date = datetime.datetime.now().strftime(fmt)
-    end_date = '01/02/2019'
+    end_date = '11/20/2019'
     news_raw_filename = 'google_news_final.csv'
 
     google_news_scrapper(start_date, end_date, news_raw_filename)

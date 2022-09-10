@@ -4,7 +4,8 @@ from textblob import TextBlob
 import os
 import datetime
 import numpy as np
-from nltk.sentiment.vader import SentimentIntensityAnalyzer
+# from nltk.sentiment.vader import SentimentIntensityAnalyzer
+from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
 
 fmt = '%Y-%m-%d'
 
@@ -23,8 +24,14 @@ def get_sentiment_val_for_flair(sentiments):
         total_sentiment = total_sentiment.replace('POSITIVE', '')
 
     total_sentiment = total_sentiment.replace('(', '').replace('[', '').replace(')', '').replace(']', '')
+    l = []
+    for t in total_sentiment.split():
+        try:
+            l.append(float(t))
+        except ValueError:
+            pass
 
-    val = float(total_sentiment)
+    val = float(l[0])
     if neg:
         return -val
     return val
